@@ -1,0 +1,271 @@
+/* ---------------------------------------------------------------
+   Majid Jadidi — personal + Jadidi Lab site
+   Single shared stylesheet. Edit colors in :root below.
+   --------------------------------------------------------------- */
+
+:root {
+  --ink:        #1a1a1a;
+  --ink-soft:   #4a4a4a;
+  --ink-faint:  #767676;
+  --rule:       #e2e2e2;
+  --accent:     #9e2a2b;
+  --accent-bg:  #faf5f5;
+  --bg:         #ffffff;
+  --max:        800px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px 90px; }
+
+/* ---------- Navigation ---------- */
+
+nav { border-bottom: 1px solid var(--rule); margin-bottom: 44px; }
+
+nav .wrap {
+  padding-top: 22px; padding-bottom: 16px;
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 26px;
+}
+
+nav .site-name {
+  font-weight: 650; font-size: 17px; margin-right: auto;
+  color: var(--ink); text-decoration: none; letter-spacing: -0.01em;
+}
+
+nav a.navlink { color: var(--ink-soft); text-decoration: none; font-size: 15.5px; }
+nav a.navlink:hover { color: var(--accent); }
+nav a.navlink.active { color: var(--accent); font-weight: 600; }
+
+/* ---------- Header / hero ---------- */
+
+header.hero { display: flex; gap: 34px; align-items: flex-start; margin-bottom: 30px; }
+
+header.hero img.portrait {
+  width: 182px; height: 224px; object-fit: cover;
+  border-radius: 4px; flex-shrink: 0; background: #eee;
+}
+
+.hero-text h1 { font-size: 30px; line-height: 1.2; margin: 0 0 6px; letter-spacing: -0.02em; }
+.hero-text .title { color: var(--ink-soft); margin: 0 0 3px; font-size: 16.5px; }
+.hero-text .affil { color: var(--ink-faint); margin: 0 0 6px; font-size: 15.5px; }
+.hero-text .second { color: var(--ink-faint); margin: 0 0 16px; font-size: 15.5px; }
+
+/* ---------- Page title ---------- */
+
+h1.page { font-size: 30px; letter-spacing: -0.02em; margin: 0 0 12px; }
+
+/* ---------- One-page layout ---------- */
+
+.wrap.onepage { padding-top: 44px; }
+
+h1.name {
+  font-size: 32px; letter-spacing: -0.02em;
+  margin: 0 0 8px; font-weight: 650;
+}
+
+img.portrait-block {
+  float: right;
+  width: 190px; height: 234px;
+  object-fit: cover; border-radius: 4px;
+  margin: 4px 0 18px 28px;
+  background: #eee;
+}
+
+.wrap.onepage h2 { clear: both; }
+
+/* ---------- Link row (plain, pipe-separated) ---------- */
+
+.linkrow { font-size: 15.5px; line-height: 2; color: var(--ink-faint); }
+
+.linkrow a { color: var(--accent); text-decoration: none; }
+.linkrow a:hover { text-decoration: underline; }
+
+.linkrow .sep { margin: 0 7px; color: var(--rule); }
+
+/* ---------- Anchored sections ---------- */
+
+h2[id], h1[id] { scroll-margin-top: 20px; }
+
+/* ---------- Typography ---------- */
+
+h2 {
+  font-size: 15px; text-transform: uppercase; letter-spacing: 0.09em;
+  color: var(--ink-faint); font-weight: 650;
+  margin: 46px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--rule);
+}
+
+h3 {
+  font-size: 18.5px; margin: 34px 0 10px; letter-spacing: -0.01em;
+  color: var(--accent); font-weight: 650;
+}
+
+/* Key phrases — bold, dark, for scanning */
+p strong, li strong { font-weight: 650; color: var(--ink); }
+
+/* Standout phrase — use sparingly */
+.hl {
+  background: var(--accent-bg);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+  border-radius: 2px;
+  font-weight: 650;
+}
+
+p { margin: 0 0 16px; }
+a { color: var(--accent); }
+a:hover { text-decoration: none; }
+
+.lede { font-size: 18.5px; line-height: 1.6; }
+.muted { color: var(--ink-faint); font-size: 15px; }
+
+ul { padding-left: 20px; }
+li { margin-bottom: 7px; }
+
+/* ---------- Figures ---------- */
+
+figure { margin: 26px 0; }
+
+figure img {
+  width: 100%; height: auto; display: block;
+  border-radius: 4px; border: 1px solid var(--rule);
+}
+
+figcaption { color: var(--ink-faint); font-size: 14.5px; margin-top: 9px; line-height: 1.5; }
+
+figure.plain img { border: none; }
+
+figure.narrow img { max-width: 460px; }
+
+h3 { clear: both; }
+
+/* ---------- Photo gallery ---------- */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(216px, 1fr));
+  gap: 18px;
+  margin: 24px 0 8px;
+}
+
+.gallery figure { margin: 0; }
+
+.gallery img { aspect-ratio: 4 / 3; object-fit: cover; }
+
+/* ---------- Research theme rows ---------- */
+
+.themes { display: grid; gap: 2px; }
+.theme { padding: 20px 0; border-bottom: 1px solid var(--rule); }
+.theme:last-child { border-bottom: none; }
+.theme h3 { margin: 0 0 6px; font-size: 17.5px; }
+.theme p  { margin: 0; color: var(--ink-soft); font-size: 16px; }
+
+/* ---------- News list ---------- */
+
+.news { list-style: none; padding: 0; margin: 0; }
+
+.news li {
+  display: flex; gap: 18px; padding: 11px 0;
+  border-bottom: 1px solid var(--rule); font-size: 16px; margin: 0;
+}
+
+.news li:last-child { border-bottom: none; }
+.news .when { flex: 0 0 78px; color: var(--ink-faint); font-size: 14.5px; padding-top: 2px; }
+
+/* ---------- Publications ---------- */
+
+.pubyear {
+  font-size: 14px; font-weight: 700; letter-spacing: 0.06em;
+  color: var(--accent); margin: 34px 0 10px;
+}
+
+.pub { padding: 13px 0; border-bottom: 1px solid var(--rule); font-size: 16px; line-height: 1.55; }
+.pub:last-child { border-bottom: none; }
+.pub .pubtitle {
+  display: block; font-weight: 600; margin-bottom: 3px;
+  color: var(--ink); text-decoration: none;
+}
+
+.pub a.pubtitle:hover { color: var(--accent); text-decoration: underline; }
+.pub .authors  { color: var(--ink-soft); font-size: 15px; }
+.pub .venue    { color: var(--ink-faint); font-size: 15px; font-style: italic; }
+.pub .me       { color: var(--ink); font-weight: 650; font-style: normal; }
+
+/* ---------- Team grid ---------- */
+
+.team {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+  gap: 26px 20px; margin-top: 6px;
+}
+
+.person img, .person .noimg {
+  width: 100%; aspect-ratio: 1 / 1; object-fit: cover;
+  border-radius: 4px; background: #efefef; display: block;
+}
+
+.person .pname { font-weight: 600; font-size: 15.5px; margin: 9px 0 1px; }
+.person .prole { color: var(--ink-faint); font-size: 14px; line-height: 1.45; }
+
+/* ---------- In memoriam ---------- */
+
+.memoriam {
+  border-top: 1px solid var(--rule);
+  padding-top: 16px;
+  margin-top: 26px;
+  color: var(--ink-soft);
+  font-size: 15.5px;
+}
+
+/* ---------- Callout ---------- */
+
+.callout {
+  background: var(--accent-bg); border-left: 3px solid var(--accent);
+  padding: 16px 20px; margin: 26px 0; font-size: 16px;
+}
+
+.callout p:last-child { margin-bottom: 0; }
+
+/* ---------- Footer ---------- */
+
+footer {
+  border-top: 1px solid var(--rule); margin-top: 60px; padding-top: 20px;
+  color: var(--ink-faint); font-size: 14.5px;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 620px) {
+  body { font-size: 16.5px; }
+
+  header.hero { flex-direction: column; gap: 20px; align-items: flex-start; }
+  header.hero img.portrait { width: 152px; height: 187px; }
+
+  .hero-text h1 { font-size: 26px; }
+  h1.page { font-size: 26px; }
+  h1.name { font-size: 27px; }
+
+  img.portrait-block {
+    float: none; display: block;
+    width: 160px; height: 197px;
+    margin: 6px 0 20px;
+  }
+
+  nav .wrap { gap: 6px 18px; }
+  nav .site-name { flex: 1 0 100%; margin-bottom: 4px; }
+
+  .news li { flex-direction: column; gap: 2px; }
+  .news .when { flex: none; }
+
+  .team    { grid-template-columns: repeat(auto-fill, minmax(124px, 1fr)); }
+  .gallery { grid-template-columns: 1fr; }
+}
